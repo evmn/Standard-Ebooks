@@ -8,7 +8,12 @@ def getBookPages():
 	ebook_urls = []
 	base_url = "https://standardebooks.org/ebooks/?page="
 	root_url = "https://standardebooks.org"
-	for i in range(1, 22):
+	url = base_url + str(1)
+	html = urlopen(url)
+	bsObj = BeautifulSoup(html, "lxml")
+	navigate = bsObj.find('main', attrs={"class":"ebooks"}).find('nav').findAll('li')
+	lastpage = 	int(navigate[len(navigate)-1].find('a').get_text())+1#Return lastpage+1
+	for i in range(1, lastpage):
 		url = base_url + str(i)
 		html = urlopen(url)
 		bsObj = BeautifulSoup(html, "lxml")
