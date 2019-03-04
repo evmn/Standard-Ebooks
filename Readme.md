@@ -27,7 +27,7 @@ python3 meta.py
 ## database
 
 
-Query total/average words of all books:
+Query total/average/max/min words of all books:
 
 
 ```sql
@@ -35,5 +35,16 @@ sqlite> SELECT SUM(words) FROM books;
 22372822
 sqlite> SELECT AVG(words) FROM books;
 92449.6776859504
-sqlite> 
+sqlite> SELECT MAX(words) from books;
+801665
+sqlite> SELECT MIN(words) from books;
+5166
 ```
+
+Query total record:
+
+```sql
+sqlite> SELECT COUNT(title) from books;
+242
+```
+

@@ -23,8 +23,9 @@ def getBookPages():
 	return ebook_urls
 
 def saveMetainfo(links):
-	db.execute("select * from books")
-	localBooks = len(db.fetchall())
+	#db.execute("select * from books")
+	#localBooks = len(db.fetchall())
+	localBooks = db.execute("select count(id) from books").fetchone()[0]
 	serverBooks = len(links)
 	print('\n\nThere are', serverBooks, 'books in StandardEbooks.org')
 	print('there are', localBooks, 'books in local database\n')
