@@ -23,3 +23,17 @@ Save book info to local sqlite3 database.
 ```sh
 python3 meta.py
 ```
+
+## database
+
+
+Query total/average words of all books:
+
+
+```sql
+sqlite> SELECT SUM(words) FROM books;
+22372822
+sqlite> SELECT AVG(words) FROM books;
+92449.6776859504
+sqlite> 
+```
