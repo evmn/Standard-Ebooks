@@ -41,10 +41,10 @@ sqlite> SELECT MIN(words) from books;
 5166
 ```
 
-Query total record:
+Query records number:
 
 ```sql
-sqlite> SELECT COUNT(title) from books;
+sqlite> SELECT COUNT(*) from books;
 242
 ```
 
