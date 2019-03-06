@@ -10,7 +10,7 @@ def db2md():
 		author = books[2]
 		words = books[3]
 		ease = books[4]
-		description = books[5]
+		description = books[5].replace("\n","\n\n")
 		print('##', author, '-', title)
 		print('\n', 'There are', words, 'words in this book.\n')
 		print('### Description\n', description)
